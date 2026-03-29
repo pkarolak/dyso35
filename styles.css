@@ -1,0 +1,1018 @@
+/* --- Disco lat 90.: neon, parkiet --- */
+:root {
+  --void: #050210;
+  --deep: #140828;
+  --neon-pink: #ff2a9d;
+  --neon-cyan: #00f5ff;
+  --neon-yellow: #fff01f;
+  --neon-magenta: #ff00ea;
+  --disco-orange: #ff6600;
+  --text: #f8e8ff;
+  --text-dim: rgba(248, 232, 255, 0.75);
+  --font-display: "Orbitron", system-ui, sans-serif;
+  --font-accent: "Audiowide", cursive;
+  --font-body: "Rajdhani", system-ui, sans-serif;
+  /* Telefony: ciaśniejszy padding boczny, większy dolny (kciuk + home indicator) */
+  --space: clamp(1rem, 4vw, 2.5rem);
+  --space-safe-bottom: max(1.25rem, env(safe-area-inset-bottom, 0px));
+  --max: 40rem;
+  --touch-min: 48px;
+
+  /* Akcenty neon — jeden zestaw (żółty/cyan + magenta jako „drugi pierścień”) */
+  --neon-rim-y: 0 0 14px rgba(255, 240, 31, 0.5);
+  --neon-rim-c: 0 0 14px rgba(0, 245, 255, 0.45);
+  --neon-rim-m: 0 0 24px rgba(255, 0, 234, 0.22);
+  --neon-rim-m-lg: 0 0 32px rgba(255, 0, 234, 0.14);
+  --text-shadow-headline: 0 0 20px rgba(255, 240, 31, 0.55), 0 0 42px rgba(255, 0, 234, 0.38),
+    0 0 2px rgba(0, 0, 0, 0.9), 3px 4px 0 rgba(100, 0, 90, 0.45);
+  --text-shadow-marquee: 0 0 10px rgba(255, 240, 31, 0.95), 0 0 24px rgba(255, 0, 234, 0.45),
+    0 0 2px rgba(0, 0, 0, 0.95);
+  --text-shadow-date: var(--neon-rim-y), var(--neon-rim-m-lg);
+  --text-shadow-time: var(--neon-rim-c), var(--neon-rim-m);
+  --text-shadow-byline: var(--neon-rim-c), var(--neon-rim-m), 0 0 2px rgba(0, 0, 0, 0.82);
+  --text-shadow-retro: 1px 1px 0 rgba(120, 0, 90, 0.95), 2px 2px 0 rgba(80, 0, 120, 0.5),
+    0 0 0.4em rgba(255, 240, 31, 0.55);
+  --shadow-marquee: 0 0 20px rgba(255, 240, 31, 0.32), 0 0 40px rgba(255, 0, 234, 0.14),
+    inset 0 0 28px rgba(0, 245, 255, 0.07);
+  --shadow-marquee-mobile: 0 0 16px rgba(255, 240, 31, 0.28), 0 0 32px rgba(255, 0, 234, 0.1),
+    inset 0 0 0 1px rgba(255, 240, 31, 0.22), inset 0 0 22px rgba(0, 245, 255, 0.05);
+  --shadow-box-when: 0 0 20px rgba(0, 245, 255, 0.28), 0 0 36px rgba(255, 0, 234, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  --shadow-box-card: 0 0 0 1px rgba(255, 0, 234, 0.2), 0 0 26px rgba(0, 245, 255, 0.2),
+    0 0 48px rgba(255, 0, 234, 0.12), 0 0 72px rgba(0, 245, 255, 0.06), inset 0 0 70px rgba(255, 0, 234, 0.04),
+    0 18px 52px rgba(0, 0, 0, 0.58);
+  --shadow-box-retro: inset 0 1px 0 rgba(255, 255, 255, 0.22), 0 0 0 1px rgba(255, 0, 234, 0.4),
+    3px 3px 0 rgba(255, 0, 234, 0.85), 4px 4px 0 rgba(0, 0, 0, 0.35), 0 0 22px rgba(0, 245, 255, 0.32);
+  --shadow-box-retro-sm: inset 0 1px 0 rgba(255, 255, 255, 0.18), 0 0 0 1px rgba(255, 0, 234, 0.38),
+    2px 2px 0 rgba(255, 0, 234, 0.82), 3px 3px 0 rgba(0, 0, 0, 0.3), 0 0 18px rgba(0, 245, 255, 0.28);
+  --shadow-toast: 0 0 24px rgba(0, 245, 255, 0.22), 0 8px 32px rgba(0, 0, 0, 0.45);
+  --shadow-cta: 0 0 22px rgba(0, 245, 255, 0.75), 0 0 38px rgba(255, 0, 234, 0.35), 0 4px 0 #1a0538,
+    inset 0 1px 0 rgba(255, 255, 255, 0.35);
+  --shadow-cta-hover: 0 0 24px rgba(255, 42, 157, 0.7), 0 6px 0 #1a0538;
+  --shadow-cta-active: 0 0 12px rgba(0, 245, 255, 0.5);
+  --shadow-iban-hover: 0 0 16px rgba(0, 245, 255, 0.2);
+  --shadow-corner-c: -1px -1px 10px rgba(0, 245, 255, 0.28);
+  --shadow-corner-p: 1px 1px 10px rgba(255, 42, 157, 0.28);
+  --border-accent-1: 1px solid rgba(0, 245, 255, 0.5);
+  --border-accent-2: 2px solid rgba(0, 245, 255, 0.42);
+  --border-marquee: 2px solid rgba(255, 240, 31, 0.52);
+  --focus-ring: 0 0 0 2px var(--void), 0 0 0 4px var(--neon-cyan);
+  --radius-ui: 6px;
+  --radius-sm: 4px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: clip;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .scene__floor {
+    animation: none !important;
+  }
+
+  .hero__marquee-track {
+    animation: none !important;
+    justify-content: center;
+    width: 100%;
+  }
+}
+
+body {
+  margin: 0;
+  min-height: 100dvh;
+  min-height: 100svh;
+  background: var(--void);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-weight: 500;
+  /* Na telefonach: min. ~17px — czytelność i mniejsze ryzyko „zoom” przy polach w formularzu Google */
+  font-size: clamp(1.0625rem, 0.4vw + 1rem, 1.2rem);
+  line-height: 1.6;
+  letter-spacing: 0.02em;
+  overflow-x: hidden;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: rgba(0, 245, 255, 0.15);
+}
+
+/* Fajerwerki przy wejściu (canvas z fireworks-js) */
+.fireworks-root {
+  position: fixed;
+  inset: 0;
+  z-index: 15;
+  pointer-events: none;
+}
+
+.fireworks-root canvas {
+  display: block;
+}
+
+/* ========== Tło: gradient + gwiazdy + parkiet ========== */
+.scene {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.scene__gradient {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 120% 85% at 50% -25%, rgba(255, 0, 234, 0.48), transparent 52%),
+    radial-gradient(ellipse 90% 55% at 100% 45%, rgba(0, 245, 255, 0.2), transparent 48%),
+    radial-gradient(ellipse 70% 50% at 0% 85%, rgba(255, 42, 157, 0.22), transparent 50%),
+    radial-gradient(ellipse 50% 40% at 70% 15%, rgba(255, 102, 0, 0.12), transparent 45%),
+    linear-gradient(180deg, var(--deep) 0%, var(--void) 42%, #020008 100%);
+}
+
+.scene__gradient::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(
+    ellipse 90% 80% at 50% 38%,
+    transparent 22%,
+    rgba(0, 0, 0, 0.35) 55%,
+    rgba(0, 0, 0, 0.75) 100%
+  );
+}
+
+.scene__stars {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background-image:
+    radial-gradient(1.5px 1.5px at 10% 20%, #fff, transparent),
+    radial-gradient(1px 1px at 30% 65%, rgba(255, 255, 255, 0.9), transparent),
+    radial-gradient(1.5px 1.5px at 72% 18%, #fff, transparent),
+    radial-gradient(1px 1px at 88% 42%, rgba(255, 255, 255, 0.85), transparent),
+    radial-gradient(1.5px 1.5px at 55% 88%, #fff, transparent),
+    radial-gradient(1px 1px at 15% 90%, rgba(255, 255, 255, 0.8), transparent),
+    radial-gradient(2px 2px at 40% 35%, rgba(0, 245, 255, 0.9), transparent),
+    radial-gradient(1px 1px at 95% 75%, rgba(255, 42, 157, 0.8), transparent);
+  background-size: 100% 100%;
+  opacity: 0.78;
+}
+
+.scene__floor {
+  position: absolute;
+  left: -50%;
+  bottom: -5%;
+  width: 200%;
+  height: 55vh;
+  background:
+    linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.94) 0%,
+      rgba(10, 2, 24, 0.45) 38%,
+      transparent 100%
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent 0,
+      transparent 36px,
+      rgba(0, 245, 255, 0.48) 36px,
+      rgba(0, 245, 255, 0.48) 38px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      transparent 0,
+      transparent 36px,
+      rgba(255, 42, 157, 0.38) 36px,
+      rgba(255, 42, 157, 0.38) 38px
+    );
+  transform-origin: 50% 100%;
+  transform: perspective(420px) rotateX(58deg);
+  animation: floor-pulse 3.8s ease-in-out infinite alternate;
+  filter: saturate(1.15);
+}
+
+@keyframes floor-pulse {
+  0% {
+    filter: hue-rotate(-8deg) brightness(0.95);
+  }
+  100% {
+    filter: hue-rotate(12deg) brightness(1.08);
+  }
+}
+
+/* --- Dekoracja: klimat PL lat 90. (tylko tło, bez wpływu na układ) --- */
+.scene__pl90 {
+  position: absolute;
+  pointer-events: none;
+}
+
+/* „Kafelki” / siatka sklepowa + lekki romb (nawiązanie do wzoru z epoki) */
+.scene__pl90--folk {
+  inset: 0;
+  z-index: 1;
+  opacity: 0.4;
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      transparent 0,
+      transparent 13px,
+      rgba(0, 245, 255, 0.045) 13px,
+      rgba(0, 245, 255, 0.045) 14px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent 0,
+      transparent 13px,
+      rgba(255, 42, 157, 0.04) 13px,
+      rgba(255, 42, 157, 0.04) 14px
+    ),
+    repeating-linear-gradient(
+      45deg,
+      transparent 0,
+      transparent 24px,
+      rgba(255, 240, 31, 0.02) 24px,
+      rgba(255, 240, 31, 0.02) 25px
+    );
+  mix-blend-mode: soft-light;
+}
+
+/* Migocące neony w głębi (jak dym + światła klubu) */
+.scene__pl90--pulse {
+  inset: -20%;
+  z-index: 2;
+  opacity: 0.48;
+  background:
+    radial-gradient(ellipse 65% 50% at 22% 38%, rgba(255, 0, 234, 0.45), transparent 58%),
+    radial-gradient(ellipse 55% 48% at 78% 62%, rgba(0, 245, 255, 0.32), transparent 52%),
+    radial-gradient(ellipse 45% 35% at 50% 88%, rgba(255, 240, 31, 0.14), transparent 50%);
+  mix-blend-mode: screen;
+  animation: disco-mist 11s ease-in-out infinite alternate;
+}
+
+@keyframes disco-mist {
+  0% {
+    transform: translate(-4%, -3%) scale(1);
+    opacity: 0.4;
+  }
+  100% {
+    transform: translate(5%, 4%) scale(1.07);
+    opacity: 0.58;
+  }
+}
+
+/* Ukośne „belki świetlne” jak reflektory na parkiecie */
+.scene__pl90--stripes {
+  inset: 0;
+  z-index: 3;
+  opacity: 0.09;
+  background: repeating-linear-gradient(
+    -32deg,
+    transparent 0,
+    transparent 48px,
+    rgba(255, 240, 31, 0.35) 48px,
+    rgba(255, 240, 31, 0.35) 50px,
+    transparent 50px,
+    transparent 110px,
+    rgba(0, 245, 255, 0.22) 110px,
+    rgba(0, 245, 255, 0.22) 112px
+  );
+  background-size: 180% 180%;
+  animation: disco-stripes 22s linear infinite;
+}
+
+@keyframes disco-stripes {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 100% 40%;
+  }
+}
+
+/* „Telewizor / VHS” — subtelne poziome linie */
+.scene__pl90--crt {
+  inset: 0;
+  z-index: 4;
+  opacity: 0.35;
+  background: repeating-linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0) 2px,
+    rgba(0, 0, 0, 0.11) 2px,
+    rgba(0, 0, 0, 0.11) 3px
+  );
+}
+
+/* Pasek kolorów jak przester / taśma — góra ekranu */
+.scene__pl90--tvstrip {
+  top: env(safe-area-inset-top, 0px);
+  left: 0;
+  right: 0;
+  z-index: 5;
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    #ffffff 0%,
+    #ffffff 6%,
+    #d4006c 6%,
+    #d4006c 22%,
+    #00b4d8 22%,
+    #00b4d8 38%,
+    #ffe600 38%,
+    #ffe600 54%,
+    #e6007e 54%,
+    #e6007e 70%,
+    #00ffc6 70%,
+    #00ffc6 86%,
+    #ffffff 86%,
+    #ffffff 100%
+  );
+  opacity: 0.92;
+  box-shadow:
+    0 1px 0 rgba(0, 0, 0, 0.35),
+    0 0 14px rgba(255, 240, 31, 0.35);
+}
+
+@media (max-width: 639px) {
+  .scene__pl90--crt {
+    opacity: 0.22;
+  }
+
+  .scene__pl90--folk {
+    opacity: 0.32;
+  }
+
+  .scene__pl90--pulse {
+    opacity: 0.38;
+  }
+
+  .scene__pl90--stripes {
+    opacity: 0.07;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scene__pl90--crt {
+    opacity: 0.18;
+  }
+
+  .scene__pl90--pulse {
+    animation: none !important;
+    transform: none;
+    opacity: 0.42;
+  }
+
+  .scene__pl90--stripes {
+    animation: none !important;
+  }
+}
+
+/* ========== Treść ========== */
+.hero {
+  position: relative;
+  z-index: 2;
+  margin-bottom: 1.25rem;
+}
+
+.hero__layout {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: clamp(0.65rem, 2.2vw, 1rem);
+  position: relative;
+}
+
+.hero__mood {
+  flex: 0 0 auto;
+  margin: 0;
+  width: min(12.75rem, 36vw);
+  position: relative;
+  z-index: 1;
+}
+
+.hero__mood-inner {
+  padding: 3px;
+  background: linear-gradient(145deg, var(--neon-yellow), var(--neon-pink) 52%, var(--neon-cyan));
+  border-radius: 8px;
+  transform: rotate(-2deg);
+  box-shadow: var(--shadow-marquee);
+}
+
+.hero__mood-inner img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  vertical-align: bottom;
+}
+
+.hero__shape {
+  position: absolute;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero__shape--tri {
+  top: -0.35rem;
+  left: 0.1rem;
+  width: 0;
+  height: 0;
+  border-left: 11px solid transparent;
+  border-right: 11px solid transparent;
+  border-bottom: 18px solid var(--neon-pink);
+  filter: drop-shadow(0 0 8px rgba(255, 0, 234, 0.45));
+  opacity: 0.92;
+}
+
+.hero__shape--circ {
+  top: 0.2rem;
+  right: 0.15rem;
+  width: 0.85rem;
+  height: 0.85rem;
+  border-radius: 50%;
+  background: var(--neon-yellow);
+  box-shadow: 0 0 12px rgba(255, 240, 31, 0.55);
+  opacity: 0.78;
+}
+
+.page {
+  position: relative;
+  z-index: 1;
+  max-width: calc(var(--max) + 3rem);
+  margin-inline: auto;
+  padding-top: max(var(--space), env(safe-area-inset-top, 0px));
+  padding-right: max(var(--space), env(safe-area-inset-right, 0px));
+  padding-bottom: max(calc(var(--space) * 1.75), var(--space-safe-bottom));
+  padding-left: max(var(--space), env(safe-area-inset-left, 0px));
+}
+
+.hero__marquee {
+  flex: 1 1 12rem;
+  margin: 0;
+  overflow: hidden;
+  border: var(--border-marquee);
+  border-radius: 3px;
+  background: linear-gradient(180deg, rgba(40, 0, 70, 0.5), rgba(0, 0, 0, 0.78));
+  font-family: var(--font-display);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  color: var(--neon-yellow);
+  text-shadow: var(--text-shadow-marquee);
+  box-shadow: var(--shadow-marquee);
+}
+
+.hero__marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee-slide 16s linear infinite;
+}
+
+.hero__marquee-chunk {
+  flex-shrink: 0;
+  padding: 0.45rem 0;
+  white-space: nowrap;
+}
+
+@keyframes marquee-slide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* --- List / zaproszenie --- */
+.hero + .letter {
+  margin-top: clamp(0.5rem, 2vw, 1rem);
+}
+
+/* Bez backdrop-filter: w Safari fixed wewnątrz karty „klei się” do karty, nie do dołu ekranu */
+.letter__paper {
+  position: relative;
+  isolation: isolate;
+  padding: clamp(1.5rem, 4vw, 2.25rem);
+  border: var(--border-accent-2);
+  border-radius: 10px;
+  background: linear-gradient(
+    168deg,
+    rgba(18, 0, 38, 0.97) 0%,
+    rgba(6, 0, 16, 0.99) 42%,
+    rgba(14, 0, 34, 0.96) 100%
+  );
+  box-shadow: var(--shadow-box-card);
+}
+
+/* Narożniki „plakat dyskoteki” — czysto dekoracyjne */
+.letter__paper::before,
+.letter__paper::after {
+  content: "";
+  position: absolute;
+  width: 1.35rem;
+  height: 1.35rem;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.85;
+}
+
+.letter__paper::before {
+  top: 0.55rem;
+  left: 0.55rem;
+  border-top: 2px solid var(--neon-cyan);
+  border-left: 2px solid var(--neon-cyan);
+  box-shadow: var(--shadow-corner-c);
+}
+
+.letter__paper::after {
+  bottom: 0.55rem;
+  right: 0.55rem;
+  border-bottom: 2px solid var(--neon-pink);
+  border-right: 2px solid var(--neon-pink);
+  box-shadow: var(--shadow-corner-p);
+}
+
+.letter__paper > article,
+.letter__paper > footer {
+  position: relative;
+  z-index: 1;
+}
+
+.letter__paper > article {
+  margin: 0;
+  padding: 0;
+}
+
+.letter__greeting {
+  margin: 0 0 clamp(1.25rem, 3vw, 1.75rem);
+  font-family: "Permanent Marker", var(--font-accent), cursive;
+  font-size: clamp(1.35rem, 4vw, 1.85rem);
+  font-weight: 400;
+  line-height: 1.25;
+  letter-spacing: 0.04em;
+  color: var(--neon-yellow);
+  text-shadow: var(--text-shadow-headline);
+  transform: rotate(-0.4deg);
+}
+
+.letter__section {
+  margin-bottom: clamp(1.15rem, 3vw, 1.5rem);
+}
+
+.letter__section:last-of-type {
+  margin-bottom: 0;
+}
+
+.letter__p {
+  margin: 0 0 0.85rem;
+  color: var(--text-dim);
+}
+
+.letter__p:last-child {
+  margin-bottom: 0;
+}
+
+.letter__p--flush {
+  margin-bottom: 0.35rem;
+}
+
+.letter__p--retro-center {
+  text-align: center;
+  margin-top: 0.45rem;
+  margin-bottom: 0.85rem;
+}
+
+/* Klimat „WordArt / naklejka z flayera” z lat 90. */
+.letter__retro90 {
+  display: inline-block;
+  margin: 0.1em 0.05em 0;
+  padding: 0.12em 0.35em 0.16em;
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 1.05em;
+  line-height: 1.2;
+  letter-spacing: 0.04em;
+  color: #fffce8;
+  vertical-align: baseline;
+  background: linear-gradient(
+    165deg,
+    rgba(255, 0, 234, 0.4) 0%,
+    rgba(60, 0, 100, 0.65) 45%,
+    rgba(0, 30, 80, 0.75) 100%
+  );
+  border: var(--border-accent-2);
+  border-radius: 3px;
+  box-shadow: var(--shadow-box-retro);
+  transform: skewX(-5deg);
+  text-shadow: var(--text-shadow-retro);
+}
+
+.letter__p--retro-center .letter__retro90 {
+  margin: 0;
+  padding: 0.16em 0.55em 0.2em;
+  font-size: clamp(1.2rem, 4.8vw, 1.85rem);
+  letter-spacing: 0.06em;
+}
+
+.letter__when {
+  margin: 0.65rem 0 0.85rem;
+  padding: 0.9rem 1rem;
+  border: var(--border-accent-1);
+  border-radius: 8px;
+  background: linear-gradient(
+    145deg,
+    rgba(0, 245, 255, 0.16) 0%,
+    rgba(255, 0, 234, 0.1) 45%,
+    rgba(255, 102, 0, 0.06) 100%
+  );
+  box-shadow: var(--shadow-box-when);
+  text-align: center;
+}
+
+.letter__when time {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.letter__date {
+  font-family: var(--font-display);
+  font-size: clamp(1.05rem, 3.8vw, 1.25rem);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--neon-yellow);
+  text-shadow: var(--text-shadow-date);
+}
+
+.letter__time {
+  font-family: var(--font-display);
+  font-size: clamp(0.88rem, 3vw, 1rem);
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--neon-cyan);
+  text-shadow: var(--text-shadow-time);
+}
+
+.letter__map-link {
+  display: inline-block;
+  padding: 0.2em 0;
+  color: var(--neon-cyan);
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-color: rgba(0, 245, 255, 0.55);
+  text-underline-offset: 0.2em;
+  text-decoration-thickness: 1px;
+}
+
+.letter__map-link:hover,
+.letter__map-link:focus-visible {
+  color: var(--neon-yellow);
+  text-decoration-color: var(--neon-yellow);
+  outline: none;
+}
+
+.letter__map-link:focus-visible {
+  border-radius: 2px;
+  box-shadow: var(--focus-ring);
+}
+
+.letter__pay {
+  margin-top: 1rem;
+  padding: 1rem 1.1rem;
+  border-left: 3px solid var(--neon-pink);
+  background: rgba(255, 42, 157, 0.06);
+  border-radius: 0 4px 4px 0;
+  overflow-wrap: anywhere;
+}
+
+.letter__iban {
+  margin: 0;
+  font-family: ui-monospace, "Cascadia Code", "Segoe UI Mono", monospace;
+  font-size: 0.95em;
+  letter-spacing: 0.08em;
+  color: var(--text);
+  word-break: break-all;
+}
+
+.letter__iban--btn {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  padding: 0.4rem 0.35rem;
+  text-align: left;
+  font: inherit;
+  font-family: ui-monospace, "Cascadia Code", "Segoe UI Mono", monospace;
+  letter-spacing: inherit;
+  color: inherit;
+  background: rgba(0, 245, 255, 0.06);
+  border: 1px dashed rgba(0, 245, 255, 0.35);
+  border-radius: 4px;
+  cursor: pointer;
+  min-height: var(--touch-min);
+  transition:
+    background 0.15s ease,
+    border-color 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.letter__iban--btn:hover {
+  background: rgba(0, 245, 255, 0.1);
+  border-color: rgba(0, 245, 255, 0.55);
+  box-shadow: var(--shadow-iban-hover);
+}
+
+.letter__iban--btn:focus-visible {
+  outline: 2px solid var(--neon-cyan);
+  outline-offset: 2px;
+}
+
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: 2rem;
+  z-index: 200;
+  padding: 0.65rem 1.35rem;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--text);
+  background: rgba(10, 2, 24, 0.96);
+  border: var(--border-accent-1);
+  border-radius: var(--radius-ui);
+  box-shadow: var(--shadow-toast);
+  transform: translateX(-50%) translateY(12px);
+  opacity: 0;
+  pointer-events: none;
+  transition:
+    opacity 0.28s ease,
+    transform 0.28s ease;
+}
+
+.toast--visible {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+.letter__actions {
+  margin: clamp(1.35rem, 3.5vw, 1.85rem) 0 0;
+  text-align: center;
+}
+
+.letter__actions .cta {
+  margin: 0;
+  max-width: 100%;
+  justify-content: center;
+  text-align: center;
+  line-height: 1.35;
+  padding-inline: 1.15rem;
+}
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.85rem 1.5rem;
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--void);
+  background: linear-gradient(
+    100deg,
+    var(--neon-cyan) 0%,
+    var(--neon-yellow) 48%,
+    #ff8c00 100%
+  );
+  border: 2px solid rgba(255, 240, 31, 0.95);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-cta);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.cta--primary {
+  font-size: clamp(0.62rem, 1.9vw, 0.72rem);
+}
+
+.cta:hover,
+.cta:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-cta-hover);
+  outline: 2px solid var(--neon-cyan);
+  outline-offset: 3px;
+}
+
+.cta:active {
+  transform: translateY(1px);
+  box-shadow: var(--shadow-cta-active);
+}
+
+@media (hover: none) {
+  .cta:hover {
+    transform: none;
+  }
+
+  .cta:active {
+    transform: scale(0.98);
+  }
+}
+
+.letter__sign {
+  margin-top: clamp(1.5rem, 4vw, 2rem);
+  padding-top: clamp(1rem, 3vw, 1.35rem);
+  border-top: 1px solid rgba(0, 245, 255, 0.22);
+  text-align: left;
+}
+
+.letter__sign .letter__p {
+  font-style: italic;
+  color: var(--text);
+}
+
+.letter__byline {
+  margin: 0.35rem 0 0;
+  font-family: var(--font-display);
+  font-size: clamp(0.95rem, 2.5vw, 1.1rem);
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: var(--neon-cyan);
+  text-shadow: var(--text-shadow-byline);
+}
+
+/* --- Telefony i wąskie ekrany --- */
+@media (max-width: 639px) {
+  .scene__floor {
+    height: 40vh;
+  }
+
+  .scene__stars {
+    opacity: 0.48;
+  }
+
+  .hero {
+    margin-bottom: 1rem;
+  }
+
+  .hero__layout {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero__shape {
+    display: none;
+  }
+
+  .hero__marquee {
+    order: 1;
+    flex: none;
+    width: 100%;
+    border-radius: 4px;
+    background: linear-gradient(180deg, rgba(45, 0, 75, 0.55), rgba(4, 0, 14, 0.96));
+    box-shadow: var(--shadow-marquee-mobile);
+    font-size: 0.68rem;
+    letter-spacing: 0.06em;
+    line-height: 1.35;
+  }
+
+  .hero__mood {
+    order: 2;
+    align-self: center;
+    width: min(12.5rem, 72vw);
+    margin-top: 0.45rem;
+  }
+
+  .hero__marquee-chunk[aria-hidden="true"] {
+    display: none;
+  }
+
+  .hero__marquee-track {
+    animation: none;
+    width: 100%;
+    max-width: 100%;
+    justify-content: center;
+  }
+
+  .hero__marquee-chunk {
+    flex: 1 1 auto;
+    min-width: 0;
+    padding: 0.5rem 0.65rem;
+    white-space: normal;
+    text-align: center;
+    text-wrap: balance;
+  }
+
+  .letter__paper {
+    /* Dolny padding = miejsce na przyklejony pasek z CTA + home indicator */
+    padding: 1.2rem 1rem calc(6.5rem + env(safe-area-inset-bottom, 0px));
+    border-radius: 6px;
+  }
+
+  .letter__greeting {
+    font-size: clamp(1.42rem, 5.8vw, 1.72rem);
+    line-height: 1.22;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+  }
+
+  .letter__p {
+    overflow-wrap: break-word;
+  }
+
+  .letter__iban {
+    font-size: 1rem;
+    letter-spacing: 0.035em;
+    line-height: 1.45;
+  }
+
+  .letter__when {
+    margin-top: 0.5rem;
+    padding: 1rem 0.85rem;
+  }
+
+  .letter__retro90 {
+    font-size: 0.98em;
+    padding: 0.1em 0.28em 0.14em;
+    box-shadow: var(--shadow-box-retro-sm);
+  }
+
+  .letter__p--retro-center .letter__retro90 {
+    font-size: clamp(1.15rem, 5.5vw, 1.65rem);
+    padding: 0.12em 0.42em 0.16em;
+  }
+
+  .toast {
+    bottom: calc(6.75rem + env(safe-area-inset-bottom, 0px));
+  }
+
+  .letter__actions {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 0.65rem max(1rem, env(safe-area-inset-left, 0px))
+      calc(0.65rem + env(safe-area-inset-bottom, 0px)) max(1rem, env(safe-area-inset-right, 0px));
+    text-align: center;
+    box-sizing: border-box;
+    background: linear-gradient(
+      to top,
+      rgba(18, 0, 40, 0.98) 0%,
+      rgba(10, 2, 24, 0.95) 45%,
+      rgba(8, 0, 20, 0.9) 100%
+    );
+    border-top: 1px solid rgba(0, 245, 255, 0.38);
+    box-shadow:
+      0 -4px 32px rgba(0, 0, 0, 0.6),
+      0 -1px 20px rgba(255, 0, 234, 0.12);
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+  }
+
+  .letter__actions .cta {
+    width: 100%;
+    max-width: min(100%, var(--max));
+    margin-inline: auto;
+    min-height: var(--touch-min);
+    padding: 1rem 0.9rem;
+    box-sizing: border-box;
+  }
+
+  .cta--primary {
+    font-size: clamp(0.66rem, 2.6vw, 0.74rem);
+  }
+}
+
+@media (max-width: 380px) {
+  .hero__marquee {
+    font-size: 0.62rem;
+    letter-spacing: 0.05em;
+  }
+
+  .hero__marquee-chunk {
+    padding: 0.45rem 0.5rem;
+  }
+}

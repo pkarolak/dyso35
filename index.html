@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <meta name="theme-color" content="#050210" />
+    <meta name="color-scheme" content="dark" />
+    <!-- Żeby iOS nie „podświetlał” numeru konta jako telefonu -->
+    <meta name="format-detection" content="telephone=no" />
+    <title>Dysoteka — zaproszenie</title>
+    <meta
+      name="description"
+      content="Drogie Siory Huralne — Dysoteka z okazji 35-lecia, 13 czerwca 2026, Poznań."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Audiowide&family=Orbitron:wght@500;700;900&family=Permanent+Marker&family=Rajdhani:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="scene" aria-hidden="true">
+      <div class="scene__gradient"></div>
+      <!-- Dekoracja PL / lata 90.: wzór „kafelka”, skanlinie, pasek kolorów -->
+      <div class="scene__pl90 scene__pl90--folk"></div>
+      <div class="scene__pl90 scene__pl90--pulse" aria-hidden="true"></div>
+      <div class="scene__pl90 scene__pl90--stripes" aria-hidden="true"></div>
+      <div class="scene__stars"></div>
+      <div class="scene__floor"></div>
+      <div class="scene__pl90 scene__pl90--crt"></div>
+      <div class="scene__pl90 scene__pl90--tvstrip"></div>
+    </div>
+
+    <div class="page">
+      <header class="hero">
+        <div class="hero__layout">
+          <span class="hero__shape hero__shape--tri" aria-hidden="true"></span>
+          <span class="hero__shape hero__shape--circ" aria-hidden="true"></span>
+          <figure class="hero__mood" aria-hidden="true">
+            <div class="hero__mood-inner">
+              <img
+                src="assets/hero-mood.png"
+                alt=""
+                width="1024"
+                height="675"
+                decoding="async"
+                fetchpriority="high"
+              />
+            </div>
+          </figure>
+          <p class="hero__marquee">
+            <span class="hero__marquee-track">
+              <span class="hero__marquee-chunk"
+                >★ DYSONANS ★ DYSOTEKA ★ GORĄCZKA SOBOTNIEJ NOCY ★ 13.06.2026 ★ POZNAŃ &nbsp;</span
+              ><span class="hero__marquee-chunk" aria-hidden="true"
+                >★ DYSONANS ★ DYSOTEKA ★ GORĄCZKA SOBOTNIEJ NOCY ★ 13.06.2026 ★ POZNAŃ &nbsp;</span
+              >
+            </span>
+          </p>
+        </div>
+      </header>
+
+      <main class="letter">
+        <div class="letter__paper">
+          <article>
+          <h1 class="letter__greeting">Drogie Siory Huralne!</h1>
+
+          <section class="letter__section" aria-label="Zaproszenie">
+            <p class="letter__p">
+              W imieniu Huru Kameralnego Dystans... Dyliżans... No, Sami-Wiecie-Kogo, mamy
+              przyjemność zaprosić na Dysotekę z okazji
+            </p>
+            <p class="letter__p letter__p--retro-center">
+              <span class="letter__retro90">35-lecia zespołu!</span>
+            </p>
+          </section>
+
+          <section class="letter__section" aria-label="Miejsce i termin">
+            <p class="letter__p">Ta zacna impreza odbędzie się:</p>
+            <div class="letter__when">
+              <time datetime="2026-06-13T18:00">
+                <span class="letter__date">13 czerwca 2026 roku</span>
+                <span class="letter__time">od godziny 18</span>
+              </time>
+            </div>
+            <p class="letter__p">
+              W klubie "w_sercu" przy
+              <a
+                class="letter__map-link"
+                href="https://maps.app.goo.gl/Ummtna1NYorGc8Qf9"
+                target="_blank"
+                rel="noopener noreferrer"
+                >al. Niepodległości 30 w Poznaniu</a
+              >.
+            </p>
+            <p class="letter__p">
+              Spodziewajcie się gorączki sobotniej nocy w klimacie lat 90-tych!
+            </p>
+          </section>
+
+          <section class="letter__section" aria-label="Program">
+            <p class="letter__p">
+              W programie dobra nuta od DJ-a Kalosza, dobra strawa od koła gospodyń huralnych
+              "Zgrzyt" oraz chwile nostalgii w huralnej izbie pamięci.
+            </p>
+          </section>
+
+          <section class="letter__section" aria-label="Koszt i wpłaty">
+            <p class="letter__p">
+              Koszt tego dylania to jedyne 100zł od osoby, zapraszamy razem z osobą towarzyszącą.
+            </p>
+            <div class="letter__pay">
+              <p class="letter__p letter__p--flush">
+                Wpłaty: Iwona Tomaszewska
+              </p>
+              <button
+                type="button"
+                class="letter__iban letter__iban--btn"
+                data-iban="49105015201000002242005953"
+                aria-label="Skopiuj numer konta do schowka"
+              >
+                49 1050 1520 1000 0022 4200 5953
+              </button>
+            </div>
+          </section>
+          </article>
+
+          <p class="letter__actions">
+            <a
+              class="cta cta--primary"
+              href="https://forms.gle/NgL88FFtuZdeW7Jf9"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Zapisz się!
+            </a>
+          </p>
+
+          <footer class="letter__sign">
+            <p class="letter__p letter__p--flush">Cześć pieśni!</p>
+            <p class="letter__byline">Derekcja</p>
+          </footer>
+        </div>
+      </main>
+    </div>
+
+    <div
+      class="toast"
+      id="iban-toast"
+      role="status"
+      aria-live="polite"
+      hidden
+    ></div>
+
+    <div id="fireworks-root" class="fireworks-root" aria-hidden="true"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/fireworks-js@2.10.8/dist/index.umd.js"></script>
+    <script>
+      (function () {
+        if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+          return;
+        }
+        var root = document.getElementById("fireworks-root");
+        var F = window.Fireworks;
+        if (!root || !F) return;
+        var FireworksClass = F.default || F.Fireworks;
+        if (typeof FireworksClass !== "function") return;
+
+        var fw = new FireworksClass(root, {
+          autoresize: true,
+          opacity: 0.62,
+          intensity: 38,
+          traceSpeed: 11,
+          explosion: 6,
+          particles: 55,
+          hue: { min: 265, max: 335 },
+          delay: { min: 16, max: 38 },
+          rocketsPoint: { min: 38, max: 62 },
+          brightness: { min: 52, max: 88 },
+          mouse: { click: false, move: false, max: 1 },
+          sound: { enabled: false },
+        });
+
+        fw.start();
+        window.setTimeout(function () {
+          fw.waitStop(true);
+        }, 5200);
+        window.setTimeout(function () {
+          if (fw.isRunning) {
+            fw.stop(true);
+          }
+        }, 9000);
+      })();
+    </script>
+    <script>
+      (function () {
+        var btn = document.querySelector(".letter__iban--btn");
+        var toast = document.getElementById("iban-toast");
+        if (!btn || !toast) return;
+
+        function copyText(text) {
+          if (navigator.clipboard && window.isSecureContext) {
+            return navigator.clipboard.writeText(text);
+          }
+          return new Promise(function (resolve, reject) {
+            var ta = document.createElement("textarea");
+            ta.value = text;
+            ta.setAttribute("readonly", "");
+            ta.style.position = "fixed";
+            ta.style.left = "-9999px";
+            document.body.appendChild(ta);
+            ta.select();
+            try {
+              if (document.execCommand("copy")) resolve();
+              else reject(new Error("copy"));
+            } catch (e) {
+              reject(e);
+            }
+            document.body.removeChild(ta);
+          });
+        }
+
+        function showToast(message) {
+          toast.textContent = message;
+          toast.hidden = false;
+          requestAnimationFrame(function () {
+            toast.classList.add("toast--visible");
+          });
+          clearTimeout(showToast._t);
+          showToast._t = setTimeout(function () {
+            toast.classList.remove("toast--visible");
+            setTimeout(function () {
+              toast.hidden = true;
+            }, 280);
+          }, 2200);
+        }
+
+        btn.addEventListener("click", function () {
+          var raw = btn.getAttribute("data-iban") || "";
+          copyText(raw).then(
+            function () {
+              showToast("Numer skopiowany");
+            },
+            function () {
+              showToast("Nie udało się skopiować");
+            }
+          );
+        });
+      })();
+    </script>
+  </body>
+</html>
